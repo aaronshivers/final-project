@@ -1,0 +1,27 @@
+{
+  "name": "rc-carpenters",
+  "version": "1.0.0",
+  "description": "This is the final project from our JavaScript Class",
+  "main": "index.js",
+  "dependencies": {
+    "next": "^9.0.5",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aaronshivers/final-project.git"
+  },
+  "author": "aaron shivers",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/aaronshivers/final-project/issues"
+  },
+  "homepage": "https://github.com/aaronshivers/final-project#readme"
+}
