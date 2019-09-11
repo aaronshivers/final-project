@@ -1,14 +1,16 @@
+const uuidv1 = require('uuid/v1')
+
 export const addCar = car => ({type: 'ADD_CAR', car})
 
 export const startAddCar = (carData = {}) => (dispatch, state) => {
-// console.log(carData, state)
   const {
+    id = uuidv1(),
     category = '',
     body = '',
     createdAt = 0
   } = carData
 
-  const car = {category, body, createdAt}
+  const car = {id, category, body, createdAt}
 
   localStorage.setItem('cars', JSON.stringify([...state, car]))
 
@@ -20,7 +22,14 @@ export const getCars = cars => ({type: 'GET_CARS', cars})
 export const startGetCars = () => (dispatch, state) => {
   const foundCars = JSON.parse(localStorage.getItem('cars')) || []
   const allCars = [...foundCars]
-  // cars.push(temp)
-  // console.log(allCars)
   return dispatch(getCars(allCars))
+}
+
+const removeCar = id => ({type: 'REMOVE_CAR', id})
+
+export const startRemoveCar = id => (dispatch, state) => {
+  const foundCars = JSON.parse(localStorage.getItem('cars'))
+  const filteredCars = foundCars.filter(car => car.id !== id)
+  localStorage.setItem('cars', JSON.stringify(filteredCars))
+  return dispatch(removeCar(id))
 }
