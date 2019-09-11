@@ -1,12 +1,26 @@
-export const addCar = ({category, body}) => (dispatch, state) => {
-  const updatedCars = [...state, {category, body}]
+export const addCar = car => ({type: 'ADD_CAR', car})
 
-  localStorage.setItem('cars', JSON.stringify(updatedCars))
+export const startAddCar = (carData = {}) => (dispatch, state) => {
+// console.log(carData, state)
+  const {
+    category = '',
+    body = '',
+    createdAt = 0
+  } = carData
 
-  return dispatch({type: 'ADD_CAR', car: {category, body}})
+  const car = {category, body, createdAt}
+
+  localStorage.setItem('cars', JSON.stringify([...state, car]))
+
+  return dispatch(addCar({...car}))
 }
 
-export const getCars = () => dispatch => {
-  const cars = JSON.parse(localStorage.getItem('cars'))
-  return dispatch({type: 'GET_CARS', cars})
+export const getCars = cars => ({type: 'GET_CARS', cars})
+
+export const startGetCars = () => (dispatch, state) => {
+  const foundCars = JSON.parse(localStorage.getItem('cars')) || []
+  const allCars = [...foundCars]
+  // cars.push(temp)
+  // console.log(allCars)
+  return dispatch(getCars(allCars))
 }

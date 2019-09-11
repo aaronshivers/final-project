@@ -1,15 +1,11 @@
 import {useState, useEffect, useContext} from 'react'
 import AppContext from '../context/context'
-import {addCar, getCars} from '../actions/cars'
+import {startAddCar} from '../actions/cars'
 
 const Builder = () => {
   const {state, dispatch} = useContext(AppContext)
   const [category, setCategory] = useState('')
   const [body, setBody] = useState('')
-
-  useEffect(() => {
-    getCars()(dispatch)
-  }, [])
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -17,7 +13,7 @@ const Builder = () => {
       category,
       body
     }
-    addCar(car)(dispatch, state)
+    startAddCar(car)(dispatch, state)
   }
 
   // useEffect(() => {

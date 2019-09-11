@@ -1,9 +1,12 @@
-export default (state, action) => {
+export default (state = [], action) => {
   switch (action.type) {
-    case 'GET_CARS':
-      return action.cars
     case 'ADD_CAR':
+    // console.log('hi')
+    // console.log([...state, action.car])
       return [...state, action.car]
+    case 'GET_CARS':
+    // console.log(action.cars)
+      return action.cars
     default:
       return state
   }

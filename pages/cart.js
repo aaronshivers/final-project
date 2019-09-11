@@ -1,16 +1,9 @@
 import {useContext, useEffect} from 'react'
 import AppContext from '../context/context'
 import Nav from '../components/nav'
-import {getCars} from '../actions/cars'
 
 const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
-
-  useEffect(() => {
-    getCars()(dispatch)
-  }, [])
-  
-
 
   return (
     <>
