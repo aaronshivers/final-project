@@ -84,6 +84,26 @@ const Builder = () => {
             />
             Classic
           </label>
+          <label>
+            <input
+              type='radio'
+              name='body'
+              value='military'
+              onChange={e => setBody('military')}
+              checked={body === 'military'}
+            />
+            Military
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='body'
+              value='trucks'
+              onChange={e => setBody('trucks')}
+              checked={body === 'trucks'}
+            />
+            Trucks
+          </label>
         </div>
       }
       {
@@ -118,6 +138,26 @@ const Builder = () => {
               checked={body === 'crawlers'}
             />
             Crawlers
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='body'
+              value='military'
+              onChange={e => setBody('military')}
+              checked={body === 'military'}
+            />
+            Military
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='body'
+              value='trucks'
+              onChange={e => setBody('trucks')}
+              checked={body === 'trucks'}
+            />
+            Trucks
           </label>
         </div>
       }
