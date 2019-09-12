@@ -8,13 +8,15 @@ const Builder = () => {
   const [category, setCategory] = useState('')
   const [body, setBody] = useState('')
   const [wheels, setWheels] = useState('')
+  const [battery, setBattery] = useState(false)
 
   const handleSubmit = e => {
     e.preventDefault()
     const car = {
       category,
       body,
-      wheels
+      wheels,
+      battery
     }
     startAddCar(car)(dispatch, state)
   }
@@ -182,6 +184,29 @@ const Builder = () => {
             checked={wheels === 'fancy'}
           />
           Fancy
+        </label>
+      </div>
+      <h3>Batery</h3>
+      <div>
+        <label>
+          <input
+            type='radio'
+            name='battery'
+            value='false'
+            onChange={e => setBattery('false')}
+            checked={battery === 'false'}
+          />
+          No Battery
+        </label>
+        <label>
+          <input
+            type='radio'
+            name='battery'
+            value='true'
+            onChange={e => setBattery('true')}
+            checked={battery === 'true'}
+          />
+          Add Battery
         </label>
       </div>
       <button type='submit'>Add to Cart</button>
