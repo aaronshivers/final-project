@@ -12,10 +12,11 @@ const Cart = () => {
       <h1>Cart</h1>
       <div>
         {
-          state[0] && state.map(({id, category, body}) => (
+          state[0] && state.map(({id, category, body, wheels}) => (
             <div key={id}>
               <div>{category}</div>
               <div>{body}</div>
+              <div>{wheels}</div>
               <button onClick={() => startRemoveCar(id)(dispatch, state)}>X</button>
             </div>
           ))

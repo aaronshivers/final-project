@@ -7,10 +7,16 @@ export const startAddCar = (carData = {}) => (dispatch, state) => {
     id = uuidv1(),
     category = '',
     body = '',
-    createdAt = 0
+    wheels = ''
   } = carData
 
-  const car = {id, category, body, createdAt}
+  const car = {
+    id,
+    category,
+    body,
+    wheels,
+    createdAt: Date.now()
+  }
 
   localStorage.setItem('cars', JSON.stringify([...state, car]))
 

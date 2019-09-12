@@ -7,12 +7,14 @@ const Builder = () => {
   const {state, dispatch} = useContext(AppContext)
   const [category, setCategory] = useState('')
   const [body, setBody] = useState('')
+  const [wheels, setWheels] = useState('')
 
   const handleSubmit = e => {
     e.preventDefault()
     const car = {
       category,
-      body
+      body,
+      wheels
     }
     startAddCar(car)(dispatch, state)
   }
@@ -48,6 +50,7 @@ const Builder = () => {
         />
         Off Road
       </label>
+      <h3>Body Type</h3>
       {
         category === 'street' &&
         <div>
@@ -118,6 +121,29 @@ const Builder = () => {
           </label>
         </div>
       }
+      <h3>Wheels & Tires</h3>
+      <div>
+        <label>
+          <input
+            type='radio'
+            name='wheels'
+            value='regular'
+            onChange={e => setWheels('regular')}
+            checked={wheels === 'regular'}
+          />
+          Regular
+        </label>
+        <label>
+          <input
+            type='radio'
+            name='wheels'
+            value='fancy'
+            onChange={e => setWheels('fancy')}
+            checked={wheels === 'fancy'}
+          />
+          Fancy
+        </label>
+      </div>
       <button type='submit'>Add to Cart</button>
     </form>
   )
