@@ -3,12 +3,14 @@ import AppContext from '../context/context'
 import {startAddCar} from '../actions/cars'
 import Button from './button'
 
-const Builder = () => {
+const Builder = ({getCurrentCar}) => {
   const {state, dispatch} = useContext(AppContext)
   const [category, setCategory] = useState('street')
-  const [body, setBody] = useState('sport')
+  const [body, setBody] = useState('military')
   const [wheels, setWheels] = useState('regular')
   const [battery, setBattery] = useState('one')
+
+  useEffect(() => getCurrentCar({battery, body, category, wheels}), [battery, body, category, wheels])
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -21,7 +23,7 @@ const Builder = () => {
     startAddCar(car)(dispatch, state)
   }
 
-  useEffect(() => console.log(category))
+  // useEffect(() => console.log(category))
 
   // useEffect(() => {
   //   setCategory('')
@@ -70,11 +72,11 @@ const Builder = () => {
           <input
             type='radio'
             name='body'
-            value='trucks'
-            onChange={e => setBody('trucks')}
-            checked={body === 'trucks'}
+            value='truck'
+            onChange={e => setBody('truck')}
+            checked={body === 'truck'}
           />
-          Trucks
+          Truck
         </label>
         {
           category === 'street' ?
