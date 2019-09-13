@@ -56,9 +56,29 @@ const Builder = () => {
       </fieldset>
       <fieldset>
         <legend>Body Types</legend>
+        <label>
+          <input
+            type='radio'
+            name='body'
+            value='military'
+            onChange={e => setBody('military')}
+            checked={body === 'military'}
+          />
+          Military
+        </label>
+        <label>
+          <input
+            type='radio'
+            name='body'
+            value='trucks'
+            onChange={e => setBody('trucks')}
+            checked={body === 'trucks'}
+          />
+          Trucks
+        </label>
         {
-          category === 'street' &&
-          <div>
+          category === 'street' ?
+          <>
             <label>
               <input
                 type='radio'
@@ -89,31 +109,8 @@ const Builder = () => {
               />
               Classic
             </label>
-            <label>
-              <input
-                type='radio'
-                name='body'
-                value='military'
-                onChange={e => setBody('military')}
-                checked={body === 'military'}
-              />
-              Military
-            </label>
-            <label>
-              <input
-                type='radio'
-                name='body'
-                value='trucks'
-                onChange={e => setBody('trucks')}
-                checked={body === 'trucks'}
-              />
-              Trucks
-            </label>
-          </div>
-        }
-        {
-          category === 'offRoad' &&
-          <div>
+          </> :
+          <>
             <label>
               <input
                 type='radio'
@@ -144,27 +141,7 @@ const Builder = () => {
               />
               Crawlers
             </label>
-            <label>
-              <input
-                type='radio'
-                name='body'
-                value='military'
-                onChange={e => setBody('military')}
-                checked={body === 'military'}
-              />
-              Military
-            </label>
-            <label>
-              <input
-                type='radio'
-                name='body'
-                value='trucks'
-                onChange={e => setBody('trucks')}
-                checked={body === 'trucks'}
-              />
-              Trucks
-            </label>
-          </div>
+          </>
         }
       </fieldset>
       <fieldset>
