@@ -1,7 +1,7 @@
 import {useState, useEffect, useContext} from 'react'
 import AppContext from '../context/context'
 import {startAddCar} from '../actions/cars'
-// import Radio from './radio'
+import Button from './button'
 
 const Builder = () => {
   const {state, dispatch} = useContext(AppContext)
@@ -209,7 +209,7 @@ const Builder = () => {
           Add Battery
         </label>
       </div>
-      <button type='submit'>Add to Cart</button>
+      <Button text='Add to Cart'/>
     </form>
   )
 }
