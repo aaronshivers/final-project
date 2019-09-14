@@ -9,8 +9,6 @@ import Button from '../components/button'
 const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
 
-  const handleDeleteCar = id => startRemoveCar(id)(dispatch, state)
-
   return (
     <>
       <Nav />
@@ -20,7 +18,7 @@ const Cart = () => {
           state[0] && state.map((car) => (
             <div key={car.id}>
               <CartItem {...car} />
-              <button onClick={handleDeleteCar}>X</button>
+              <button onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
             </div>
           ))
         }
