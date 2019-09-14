@@ -1,16 +1,11 @@
-const startingCount = {
-  sport: 9753,
-  suv: 8647,
-  classic: 7326,
-  atv: 8488,
-  duneBuggy: 7446,
-  crawler: 3398
-}
-
-const getNextCount = body => {
-  startingCount[body]++
-  return startingCount[body]
-}
+import {
+  getUPC,
+  getModel,
+  getTotalPrice,
+  priceList,
+  startingCount,
+  getNextCount
+} from '../actions/helpers'
 
 const CartItem = ({battery, body, category, wheels}) => (
   <>
@@ -20,6 +15,9 @@ const CartItem = ({battery, body, category, wheels}) => (
       <p>Wheels & Tires: {wheels}</p>
       <p>Batteries: {battery}</p>
       <p>Count: {getNextCount(body)}</p>
+      <p>model: {getModel(body)}</p>
+      <p>UPC Prefix: {getUPC(body)}</p>
+      <p>Total Price: ${getTotalPrice({battery, body, category, wheels, priceList})}</p>
     </div>
     <style jsx>{`
       div {

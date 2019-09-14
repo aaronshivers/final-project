@@ -5,7 +5,6 @@ import CartItem from '../components/cart-item'
 import {startRemoveCar} from '../actions/cars'
 import Button from '../components/button'
 
-
 const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
 
