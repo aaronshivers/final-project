@@ -17,7 +17,7 @@ const Cart = () => {
           state[0] && state.map((car) => (
             <div key={car.id}>
               <CartItem {...car} />
-              <button onClick={() => startRemoveCar(id)(dispatch, state)}>X</button>
+              <button onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
             </div>
           ))
         }
