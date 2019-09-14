@@ -9,7 +9,7 @@ import Button from '../components/button'
 const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
 
-  const handleButtonClick = id => startRemoveCar(id)(dispatch, state)
+  const handleDeleteCar = id => startRemoveCar(id)(dispatch, state)
 
   return (
     <>
@@ -20,7 +20,7 @@ const Cart = () => {
           state[0] && state.map((car) => (
             <div key={car.id}>
               <CartItem {...car} />
-              <Button text='X' id={car.id} handleButtonClick={handleButtonClick} />
+              <button onClick={handleDeleteCar}>X</button>
             </div>
           ))
         }

@@ -1,8 +1,6 @@
-const Button = ({text, id, handleButtonClick}) => {
+const Button = ({text}) => {
   return (
-    <button
-      onClick={() => handleButtonClick(id)}
-    >{text}
+    <button>{text}
     <style jsx>{`
         button {
             background-color: white;
