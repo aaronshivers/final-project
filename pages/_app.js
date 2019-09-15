@@ -23,6 +23,8 @@ class MyApp extends App {
               font-family: 'Roboto', sans-serif;
               color: #333;
               background-color: ghostwhite;
+              width: 768px;
+              margin: 0 auto;
             }
           `}
         </style>
