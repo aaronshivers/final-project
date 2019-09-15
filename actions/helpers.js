@@ -71,15 +71,15 @@ export const getTotalPrice = ({battery, body, category, wheels, priceList}) => {
 }
 
 export const startingCount = {
-  sport: 9753,
-  suv: 8647,
-  classic: 7326,
-  atv: 8488,
-  duneBuggy: 7446,
-  crawler: 3398
+  sport: [9753],
+  suv: [8647],
+  classic: [7326],
+  atv: [8488],
+  duneBuggy: [7446],
+  crawler: [3398]
 }
 
 export const getNextCount = body => {
-  startingCount[body]++
-  return startingCount[body]
+  startingCount[body].push(startingCount[body][startingCount[body].length - 1] + 1)
+  return startingCount[body][startingCount[body].length - 1]
 }
