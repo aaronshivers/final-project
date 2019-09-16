@@ -3,12 +3,14 @@ import AppContext from '../context/context'
 import {startAddCar} from '../actions/cars'
 import Button from './button'
 
-const Builder = () => {
+const Builder = ({getCurrentCar}) => {
   const {state, dispatch} = useContext(AppContext)
-  const [category, setCategory] = useState('')
-  const [body, setBody] = useState('')
-  const [wheels, setWheels] = useState('')
-  const [battery, setBattery] = useState(false)
+  const [category, setCategory] = useState('street')
+  const [body, setBody] = useState('military')
+  const [wheels, setWheels] = useState('regular')
+  const [battery, setBattery] = useState('one')
+
+  useEffect(() => getCurrentCar({battery, body, category, wheels}), [battery, body, category, wheels])
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -21,150 +23,131 @@ const Builder = () => {
     startAddCar(car)(dispatch, state)
   }
 
-  useEffect(() => console.log(category))
+  // useEffect(() => console.log(category))
 
   // useEffect(() => {
   //   setCategory('')
   //   setBody('')
   // }, [state])
-  const handleOnChange = value => setCategory(value)
+  // const handleOnChange = value => setCategory(value)
 
   return (
     <form onSubmit={handleSubmit}>
-      <h3>Category</h3>
-      <label>
-        <input
-          type='radio'
-          name='category'
-          value='street'
-          onChange={e => setCategory('street')}
-          checked={category === 'street'}
-        />
-        Street
-      </label>
-      <label>
-        <input
-          type='radio'
-          name='category'
-          value='offRoad'
-          onChange={e => setCategory('offRoad')}
-          checked={category === 'offRoad'}
-        />
-        Off Road
-      </label>
-      <h3>Body Type</h3>
-      {
-        category === 'street' &&
-        <div>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='sport'
-              onChange={e => setBody('sport')}
-              checked={body === 'sport'}
-            />
-            Sport
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='suv'
-              onChange={e => setBody('suv')}
-              checked={body === 'suv'}
-            />
-            SUV
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='classic'
-              onChange={e => setBody('classic')}
-              checked={body === 'classic'}
-            />
-            Classic
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='military'
-              onChange={e => setBody('military')}
-              checked={body === 'military'}
-            />
-            Military
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='trucks'
-              onChange={e => setBody('trucks')}
-              checked={body === 'trucks'}
-            />
-            Trucks
-          </label>
-        </div>
-      }
-      {
-        category === 'offRoad' &&
-        <div>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='atv'
-              onChange={e => setBody('atv')}
-              checked={body === 'atv'}
-            />
-            ATV
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='duneBuggy'
-              onChange={e => setBody('duneBuggy')}
-              checked={body === 'duneBuggy'}
-            />
-            Dune Buggy
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='crawlers'
-              onChange={e => setBody('crawlers')}
-              checked={body === 'crawlers'}
-            />
-            Crawlers
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='military'
-              onChange={e => setBody('military')}
-              checked={body === 'military'}
-            />
-            Military
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='trucks'
-              onChange={e => setBody('trucks')}
-              checked={body === 'trucks'}
-            />
-            Trucks
-          </label>
-        </div>
-      }
-      <h3>Wheels & Tires</h3>
-      <div>
+      <fieldset>
+        <legend>Categories</legend>
+        <label>
+          <input
+            type='radio'
+            name='category'
+            value='street'
+            onChange={e => setCategory('street')}
+            checked={category === 'street'}
+          />
+          Street
+        </label>
+        <label>
+          <input
+            type='radio'
+            name='category'
+            value='offRoad'
+            onChange={e => setCategory('offRoad')}
+            checked={category === 'offRoad'}
+          />
+          Off Road
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Body Types</legend>
+        <label>
+          <input
+            type='radio'
+            name='body'
+            value='military'
+            onChange={e => setBody('military')}
+            checked={body === 'military'}
+          />
+          Military
+        </label>
+        <label>
+          <input
+            type='radio'
+            name='body'
+            value='truck'
+            onChange={e => setBody('truck')}
+            checked={body === 'truck'}
+          />
+          Truck
+        </label>
+        {
+          category === 'street' ?
+          <>
+            <label>
+              <input
+                type='radio'
+                name='body'
+                value='sport'
+                onChange={e => setBody('sport')}
+                checked={body === 'sport'}
+              />
+              Sport
+            </label>
+            <label>
+              <input
+                type='radio'
+                name='body'
+                value='suv'
+                onChange={e => setBody('suv')}
+                checked={body === 'suv'}
+              />
+              SUV
+            </label>
+            <label>
+              <input
+                type='radio'
+                name='body'
+                value='classic'
+                onChange={e => setBody('classic')}
+                checked={body === 'classic'}
+              />
+              Classic
+            </label>
+          </> :
+          <>
+            <label>
+              <input
+                type='radio'
+                name='body'
+                value='atv'
+                onChange={e => setBody('atv')}
+                checked={body === 'atv'}
+              />
+              ATV
+            </label>
+            <label>
+              <input
+                type='radio'
+                name='body'
+                value='duneBuggy'
+                onChange={e => setBody('duneBuggy')}
+                checked={body === 'duneBuggy'}
+              />
+              Dune Buggy
+            </label>
+            <label>
+              <input
+                type='radio'
+                name='body'
+                value='crawlers'
+                onChange={e => setBody('crawlers')}
+                checked={body === 'crawlers'}
+              />
+              Crawlers
+            </label>
+          </>
+        }
+      </fieldset>
+      <fieldset>
+        <legend>Wheels & Tires</legend>
         <label>
           <input
             type='radio'
@@ -185,30 +168,30 @@ const Builder = () => {
           />
           Fancy
         </label>
-      </div>
-      <h3>Batery</h3>
-      <div>
+      </fieldset>
+      <fieldset>
+        <legend>Batteries</legend>
         <label>
           <input
             type='radio'
             name='battery'
-            value='false'
-            onChange={e => setBattery('false')}
-            checked={battery === 'false'}
+            value='one'
+            onChange={e => setBattery('one')}
+            checked={battery === 'one'}
           />
-          No Battery
+          One
         </label>
         <label>
           <input
             type='radio'
             name='battery'
-            value='true'
-            onChange={e => setBattery('true')}
-            checked={battery === 'true'}
+            value='two'
+            onChange={e => setBattery('two')}
+            checked={battery === 'two'}
           />
-          Add Battery
+          Two
         </label>
-      </div>
+      </fieldset>
       <Button text='Add to Cart'/>
     </form>
   )
