@@ -23,7 +23,7 @@ const Cart = () => {
           ))
         }
       </div>
-      <Link href='checkout'><a  className='link'>Checkout</a></Link>
+      <Link href='checkout'><a className='link'>Checkout</a></Link>
       <style>
         {`
         .link {
