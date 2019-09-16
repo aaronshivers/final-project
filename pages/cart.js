@@ -5,6 +5,7 @@ import Link from 'next/link'
 import CartItem from '../components/cart-item'
 import {startRemoveCar} from '../actions/cars'
 import Button from '../components/button'
+import PageTitle from '../components/page-title'
 
 const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
@@ -12,7 +13,7 @@ const Cart = () => {
   return (
     <>
       <Nav />
-      <h1>Cart</h1>
+      <PageTitle title='Cart' />
       <div>
         {
           state[0] && state.map((car) => (
