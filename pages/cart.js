@@ -3,11 +3,11 @@ import AppContext from '../context/context'
 import Nav from '../components/nav'
 import {startRemoveCar} from '../actions/cars'
 
-
+// The Cart page
 const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
 
-  return (
+  return ( 
     <>
       <Nav />
       <h1>Cart</h1>

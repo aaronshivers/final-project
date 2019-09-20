@@ -3,6 +3,7 @@ import AppContext from '../context/context'
 import {startAddCar} from '../actions/cars'
 import Button from './button'
 
+// Component to select vehicle features
 const Builder = () => {
   const {state, dispatch} = useContext(AppContext)
   const [category, setCategory] = useState('')
@@ -10,24 +11,23 @@ const Builder = () => {
   const [wheels, setWheels] = useState('')
   const [battery, setBattery] = useState(false)
 
+  // Handles "Add to Cart" button.
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault() // Prevents page reload
     const car = {
       category,
       body,
       wheels,
       battery
-    }
-    startAddCar(car)(dispatch, state)
+    } // Creates an object with properties from state.
+    startAddCar(car)(dispatch, state) // Adds car to local storage and state
   }
 
-  useEffect(() => console.log(category))
 
   // useEffect(() => {
   //   setCategory('')
   //   setBody('')
   // }, [state])
-  const handleOnChange = value => setCategory(value)
 
   return (
     <form onSubmit={handleSubmit}>
@@ -186,7 +186,7 @@ const Builder = () => {
           Fancy
         </label>
       </div>
-      <h3>Batery</h3>
+      <h3>Battery</h3>
       <div>
         <label>
           <input

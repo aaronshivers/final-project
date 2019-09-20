@@ -1,6 +1,7 @@
 import Nav from '../components/nav'
 import Builder from '../components/builder'
 
+// Cars page
 const Cars = () => (
   <>
     <Nav />

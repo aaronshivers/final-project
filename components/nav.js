@@ -1,6 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
 
+// An array containing all navigation links
+
 const links = [
   { href: 'cars', label: 'Cars' },
   { href: 'cart', label: 'Cart' }
@@ -24,6 +26,8 @@ const Nav = () => (
       ))}
     </ul>
 
+ //Navigation style
+ 
     <style jsx>{`
       :global(body) {
         margin: 0;
