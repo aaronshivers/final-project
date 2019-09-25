@@ -22,9 +22,10 @@ class MyApp extends App {
             body {
               font-family: 'Roboto', sans-serif;
               color: #333;
-              background-color: ghostwhite;
+              background-color: #f9e02e;
               height: 100%;
             }
+
             .container {
               width:768px;
               margin: 0 auto;

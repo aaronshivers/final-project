@@ -5,16 +5,18 @@ import PageTitle from '../components/page-title'
 
 const Home = () => {
   return (
-    <div className="hero-image">
-    <div className="container">
-      <Nav />
-      <PageTitle title='RC Carpenters' />
+    <>
+      <div className="hero-image"></div>
+      <div className="container">
+        <Nav />
+        <PageTitle title='RC Carpenters' />
         <div className="hero-text">
           <Link href='/cars'>
             <button>Shop Now</button>
           </Link>
         </div>
-      </div> 
+      </div>
+
       <style jsx>
         {`
           .hero-image {
@@ -27,6 +29,7 @@ const Home = () => {
             position: absolute;
             top: 0;
             left: 0;
+            z-index: -1;
           }
 
           button {
@@ -44,7 +47,7 @@ const Home = () => {
           }
         `}
       </style>
-    </div>
+    </>
   )
 }
 

@@ -15,11 +15,18 @@ const Cars = () => {
   
   return (
     <>
-      <Nav />
-      <PageTitle title='Cars' />
-      <img src='/static/car.webp' alt='car image' />
-      <Description currentCar={currentCar} />
-      <Builder getCurrentCar={getCurrentCar} />
+      <div className='container'>
+        <Nav />
+        <PageTitle className='title' title='Cars' />
+        <img src='/static/car-1.webp' alt='car image' />
+        <Description currentCar={currentCar} />
+        <Builder getCurrentCar={getCurrentCar} />
+      </div>
+      <style jsx>
+        {`
+
+        `}
+      </style>
     </>
   )
 }

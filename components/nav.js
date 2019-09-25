@@ -32,6 +32,7 @@ const Nav = () => (
       }
       nav {
         text-align: center;
+        background-color: #fae12e;
       }
       ul {
         display: flex;
@@ -45,9 +46,10 @@ const Nav = () => (
         padding: 6px 8px;
       }
       a {
-        color: #067df7;
+        color: #333;
         text-decoration: none;
-        font-size: 13px;
+        font-size: 1rem;
+        font-weight: bold;
       }
     `}</style>
   </nav>
