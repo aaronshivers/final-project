@@ -5,7 +5,7 @@ const PageTitle = ({title}) => (
        h1 {
             font-family: arial;
             font-size: 2.1rem;
-            color: red;
+            color: white;
     }
     `}</style>
   </>
