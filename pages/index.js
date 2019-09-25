@@ -10,9 +10,9 @@ const Home = () => {
       <Nav />
       <PageTitle title='RC Carpenters' />
         <div className="hero-text">
-          <h1>I am John Doe</h1>
-          <p>And I'm a Photographer</p>
-          <button>Hire me</button>
+          <Link href='/cars'>
+            <button>Shop Now</button>
+          </Link>
         </div>
       </div> 
       <style jsx>
@@ -28,8 +28,20 @@ const Home = () => {
             top: 0;
             left: 0;
           }
-        
-        
+
+          button {
+              background-color: white;
+              font-family: arial;
+              font-size: 1.2rem;
+              padding: .6rem;
+              border: 2px solid black;
+              border-radius: 5px;
+          }
+
+          button:hover {
+              background-color: gray;
+              cursor: pointer;
+          }
         `}
       </style>
     </div>
