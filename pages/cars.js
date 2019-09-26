@@ -18,13 +18,18 @@ const Cars = () => {
       <div className='container'>
         <Nav />
         <PageTitle className='title' title='Cars' />
-        <img src='/static/car-1.webp' alt='car image' />
+        <div className='image'></div>
         <Description currentCar={currentCar} />
         <Builder getCurrentCar={getCurrentCar} />
       </div>
       <style jsx>
         {`
-
+          .image {
+            background-image: radial-gradient(transparent 50%, #f9e02e 70%),
+              url('/static/car-1.webp');
+            height: 426px;
+            background-position: center;
+          }
         `}
       </style>
     </>

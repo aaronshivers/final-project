@@ -13,6 +13,7 @@ class MyApp extends App {
         <Head>
           <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
           <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet" />
+          <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Gothic+A1&display=swap" rel="stylesheet" />
         </Head>
         <AppContextProvider>
           <Component {...pageProps} />
@@ -20,7 +21,8 @@ class MyApp extends App {
         <style global jsx>
           {`
             body {
-              font-family: 'Roboto', sans-serif;
+              font-family: 'Gothic A1', sans-serif;
+              font-size: 2rem;
               color: #333;
               background-color: #f9e02e;
               height: 100%;

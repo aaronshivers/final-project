@@ -2,11 +2,11 @@ const PageTitle = ({title}) => (
   <>
     <h1>{title}</h1>
     <style jsx>{`
-       h1 {
-            font-family: arial;
-            font-size: 2.1rem;
-            color: white;
-    }
+      h1 {
+        font-family: 'Abril Fatface', cursive;
+        font-size: 3rem;
+        color: white;
+      }
     `}</style>
   </>
 )
