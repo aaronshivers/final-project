@@ -6,6 +6,7 @@ import PageTitle from '../components/page-title'
 const Home = () => {
   return (
     <>
+      <Nav />
       <div className="hero">
         <div className="hero__container">
           <div className="hero__box">
@@ -23,11 +24,12 @@ const Home = () => {
             background: url('/static/bg.jpeg');
             background-size: cover;
             background-position: center;
+            width: 100%;
           }
 
           .hero__container {
-            height: calc(100vh);
-            width: 100%;
+            height: 100vh;
+            width: 100vw;
             display: grid;
           }
 

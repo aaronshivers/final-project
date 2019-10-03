@@ -16,8 +16,8 @@ class MyApp extends App {
           <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
 
         </Head>
+
         <AppContextProvider>
-          <Nav className="navbar" />
           <Component {...pageProps} />
         </AppContextProvider>
         <style global jsx>
@@ -25,17 +25,14 @@ class MyApp extends App {
             body {
               font-family: 'Montserrat', sans-serif;
               font-size: 2rem;
-              color: #333;
+              color: black;
               height: 100%;
+              width: 100%;
             }
 
             .container {
               width:768px;
               margin: 0 auto;
-            }
-
-            .navbar {
-
             }
           `}
         </style>

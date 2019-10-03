@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Link from 'next/link'
-import { IoMdCart } from 'react-icons/io'
-import { FaBars } from 'react-icons/fa'
+import { FaBars, FaShoppingCart } from 'react-icons/fa'
 
 const links = [
+  { href: '/', label: 'Home' },
   { href: 'cars', label: 'Cars' },
   { href: 'cart', label: 'Cart' }
 ].map(link => {
@@ -15,44 +15,41 @@ const Nav = () => {
   const [showDropdown, setShowDropdown] = useState(false)
 
   return (
-    <>
-      <div className="navbar">
-        <a className="navbar__brand" href=".">RC Carpenters</a>
-        <div className="navbar__icons">
-          <a href="./cart">
-            <IoMdCart className="navbar__cart" />
-          </a>
-          <FaBars
-            className="navbar__toggle"
-            onClick={ () => setShowDropdown(!showDropdown) }
-          />
-        </div>
-        <div
-          className={ `navbar__dropdown ${ showDropdown ? "show" : null }` }
-        >
-          <nav>
-            <ul>
-              {
-                links.map(({ key, href, label }) => (
-                  <li key={key}>
-                    <a href={href}>{label}</a>
-                  </li>
-                ))
-              }
-            </ul>
-          </nav>
-        </div>
+    <div className="navbar">
+      <a className="navbar__brand" href=".">RC Carpenters</a>
+      <div className="navbar__icons">
+        <a href="./cart">
+          <FaShoppingCart className="navbar__cart" />
+        </a>
+        <FaBars
+          className="navbar__toggle"
+          onClick={ () => setShowDropdown(!showDropdown) }
+        />
+      </div>
+      <div
+        className={ `navbar__dropdown ${ showDropdown ? "show" : null }` }
+      >
+        <nav>
+          <ul>
+            {
+              links.map(({ key, href, label }) => (
+                <li key={key}>
+                  <a href={href}>{label}</a>
+                </li>
+              ))
+            }
+          </ul>
+        </nav>
       </div>
 
       <style jsx>{`
 
         .navbar {
           grid-area: navbar;
-          width: 94%;
+          width: 100vw;
           position: fixed;
           background-color: white;
           font-size: 1.5rem;
-          padding: 1rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -61,23 +58,25 @@ const Nav = () => {
         .navbar__brand {
           color: black;
           text-decoration: none;
+          margin: 1rem;
         }
 
         .navbar__icons {
           display: inline;
           height: 1.5rem;
           vertical-align: middle;
+          margin: 1rem;
         }
 
         .navbar__icons a {
           text-decoration: none;
-          color: grey;
+          color: black;
+          margin-right: 1rem;
         }
 
         .navbar__toggle {
           cursor: pointer;
-        /*  height: 1.5rem;
-          vertical-align: middle;*/
+          vertical-align: middle;
         }
 
         .navbar__dropdown {
@@ -85,14 +84,12 @@ const Nav = () => {
           position: absolute;
           left: 0;
           top: 3rem;
-          width: 93%;
-          padding: 1rem;
+          width: 100%;
           background-color: white;
         }
 
         .navbar__dropdown ul {
-          padding: 0;
-          margin: 0;
+          margin: 1rem;
         }
 
         .navbar__dropdown li {
@@ -110,7 +107,7 @@ const Nav = () => {
           display: block;
         }
       `}</style>
-    </>
+    </div>
   )
 }
 
