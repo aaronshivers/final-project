@@ -16,7 +16,7 @@ class MyApp extends App {
           <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
 
         </Head>
-
+        <Nav />
         <AppContextProvider>
           <Component {...pageProps} />
         </AppContextProvider>

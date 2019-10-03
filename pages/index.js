@@ -6,7 +6,6 @@ import PageTitle from '../components/page-title'
 const Home = () => {
   return (
     <>
-      <Nav />
       <div className="hero">
         <div className="hero__container">
           <div className="hero__box">
