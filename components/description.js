@@ -6,7 +6,7 @@ const Description = ({currentCar}) => {
   const {battery, body, category, wheels} = currentCar
 
   return (
-    <>
+    <div className='product__description'>
       <h2>Car Description</h2>
       <p>
         model: {getModel(body)}
@@ -19,7 +19,15 @@ const Description = ({currentCar}) => {
       <p>category {category} ${priceList.category[category]}</p>
       <p>wheels {wheels} ${priceList.wheels[wheels]}</p>
       <p>Total Price: ${getTotalPrice({battery, body, category, wheels, priceList})}</p>
-    </>
+    
+      <style jsx>
+        {`
+          .product__description {
+            padding-bottom: 1rem;
+          }
+        `}
+      </style>
+    </div>
   )
 }
 

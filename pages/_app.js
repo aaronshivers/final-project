@@ -22,12 +22,18 @@ class MyApp extends App {
         </AppContextProvider>
         <style global jsx>
           {`
+            * {
+              box-sizing: border-box;
+            }
+
             body {
+              margin: 0;
               font-family: 'Montserrat', sans-serif;
-              font-size: 2rem;
               color: black;
-              height: 100%;
-              width: 100%;
+              min-height: 100vh;
+            }
+
+            main {
             }
 
             .container {

@@ -9,28 +9,31 @@ const Cars = () => {
   const getCurrentCar = car => {
     setCurrentCar(car)
   }
-
-  // useEffect(() => console.log(currentCar), [currentCar])
   
   return (
-    <>
-      <div className='container'>
+    <main>
+      <div className='product'>
+        <img className="product__image" src='./static/car-1.webp' />
         <PageTitle className='title' title='Cars' />
-        <div className='image'></div>
-        <Description currentCar={currentCar} />
-        <Builder getCurrentCar={getCurrentCar} />
+        <div className='product__info-container'>
+          <h2 className='product__title'>{currentCar.category}</h2>
+          <Description currentCar={currentCar} />
+        </div>
       </div>
+      <Builder getCurrentCar={getCurrentCar} />
+      
       <style jsx>
         {`
-          .image {
-            background-image: radial-gradient(transparent 50%, #f9e02e 70%),
-              url('/static/car-1.webp');
-            height: 426px;
-            background-position: center;
+          .product__image {
+            width: 100%;
+          }
+
+          .product__info-container {
+            margin: 1rem;
           }
         `}
       </style>
-    </>
+    </main>
   )
 }
 
