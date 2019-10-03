@@ -1,5 +1,4 @@
 import {useState, useEffect} from 'react'
-import Nav from '../components/nav'
 import Description from '../components/description'
 import Builder from '../components/builder'
 import PageTitle from '../components/page-title'
@@ -16,7 +15,6 @@ const Cars = () => {
   return (
     <>
       <div className='container'>
-        <Nav />
         <PageTitle className='title' title='Cars' />
         <div className='image'></div>
         <Description currentCar={currentCar} />

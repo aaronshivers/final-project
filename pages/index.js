@@ -6,44 +6,65 @@ import PageTitle from '../components/page-title'
 const Home = () => {
   return (
     <>
-      <div className="hero-image"></div>
-      <div className="container">
-        <Nav />
-        <PageTitle title='RC Carpenters' />
-        <div className="hero-text">
-          <Link href='/cars'>
-            <button>Shop Now</button>
-          </Link>
+      <div className="hero">
+        <div className="hero__container">
+          <div className="hero__box">
+            <h1 className="hero__title">RC Carpenters</h1>
+            <p className="hero__subtitle">
+              Get Your Game On!
+            </p>
+          </div>
         </div>
       </div>
 
       <style jsx>
         {`
-          .hero-image {
-            background-image: url("/static/bg.jpeg");
-            height: 100%;
-            width: 100%;
-            background-position: center;
-            background-repeat: no-repeat;
+          .hero {
+            background: url('/static/bg.jpeg');
             background-size: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: -1;
+            background-position: center;
           }
 
-          button {
-              background-color: white;
-              font-family: arial;
-              font-size: 1.2rem;
-              padding: .6rem;
-              border: 2px solid black;
-              border-radius: 5px;
+          .hero__container {
+            height: calc(100vh);
+            width: 100%;
+            display: grid;
           }
 
-          button:hover {
-              background-color: gray;
-              cursor: pointer;
+          .hero__box {
+            justify-self: center;
+            align-self: center;
+            text-align: center;
+          }
+
+          .hero__title {
+            font-size: 3rem;
+            font-weight: 300;
+            background-color: black;
+            color: white;
+            padding: 1rem;
+          }
+
+          .hero__subtitle {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: space-evenly;
+            align-items: center;
+            line-height: 2.5rem;
+            padding: 1rem;
+            background-color: black;
+            color: white;
+          }
+
+          .description {
+            text-transform: none;
+            text-align: justify;
+            font-size: 1.2rem;
+            letter-spacing: normal;
+            border-bottom: 1px solid black;
+            margin-bottom: 1rem;
+            margin-left: 1rem;
+            margin-right: 1rem;
           }
         `}
       </style>
