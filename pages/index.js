@@ -5,7 +5,7 @@ import PageTitle from '../components/page-title'
 
 const Home = () => {
   return (
-    <>
+    <main>
       <div className="hero">
         <div className="hero__container">
           <div className="hero__box">
@@ -69,7 +69,7 @@ const Home = () => {
           }
         `}
       </style>
-    </>
+    </main>
   )
 }
 

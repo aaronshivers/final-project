@@ -45,8 +45,8 @@ const Nav = () => {
       <style jsx>{`
 
         .navbar {
-          grid-area: navbar;
           width: 100vw;
+          height: 4rem;
           position: fixed;
           background-color: white;
           font-size: 1.5rem;
@@ -66,6 +66,7 @@ const Nav = () => {
           height: 1.5rem;
           vertical-align: middle;
           margin: 1rem;
+          margin-right: 2rem;
         }
 
         .navbar__icons a {
@@ -86,6 +87,7 @@ const Nav = () => {
           top: 3rem;
           width: 100%;
           background-color: white;
+          padding-right: 1rem;
         }
 
         .navbar__dropdown ul {
