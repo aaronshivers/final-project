@@ -11,8 +11,7 @@ const Cart = () => {
   const {state, dispatch} = useContext(AppContext)
 
   return (
-    <div className='container'>
-      <Nav />
+    <main>
       <PageTitle title='Cart' />
       <div>
         {
@@ -43,7 +42,7 @@ const Cart = () => {
         }
         `}
       </style>
-    </div>
+    </main>
   )
 }
 
