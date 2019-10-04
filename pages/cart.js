@@ -45,7 +45,7 @@ const Cart = () => {
         }
         `}
       </style>
-    </main>
+    </div>
   )
 }
 
