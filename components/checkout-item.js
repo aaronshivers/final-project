@@ -29,7 +29,6 @@ const CheckoutItem = ({battery, body, category, wheels, count}) => {
         }
 
         .info {
-          border-bottom: 1px solid black;
         }
 
         .price {
@@ -39,7 +38,7 @@ const CheckoutItem = ({battery, body, category, wheels, count}) => {
         }
 
         .info, .price {
-          
+          border: 1px solid black;
           padding: .5rem;
         }
       `}
