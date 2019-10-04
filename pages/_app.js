@@ -18,9 +18,7 @@ class MyApp extends App {
         </Head>
         <Nav />
         <AppContextProvider>
-          <div className='container'>
-            <Component {...pageProps} />
-          </div>
+          <Component {...pageProps} />
         </AppContextProvider>
         <style global jsx>
           {`
@@ -39,7 +37,7 @@ class MyApp extends App {
             }
 
             .container {
-              max-width:325px;
+              max-width: 325px;
               margin: 0 auto;
             }
 

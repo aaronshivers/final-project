@@ -12,18 +12,21 @@ const Cart = () => {
 
   return (
     <main>
-      <PageTitle title='Cart' />
-      <div>
-        {
-          state[0] && state.map((car) => (
-            <div key={car.id}>
-              <CartItem {...car} />
-              <button onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
-            </div>
-          ))
-        }
+      <div className='container'>
+        <PageTitle title='Cart' />
+        <div>
+          {
+            state[0] && state.map((car) => (
+              <div key={car.id}>
+                <CartItem {...car} />
+                <button onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
+              </div>
+            ))
+          }
+        </div>
+        <Link href='checkout'><a className='link'>Checkout</a></Link>
       </div>
-      <Link href='checkout'><a className='link'>Checkout</a></Link>
+
       <style>
         {`
         .link {

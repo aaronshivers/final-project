@@ -12,15 +12,17 @@ const Cars = () => {
   
   return (
     <main>
-      <div className='product'>
-        <img className="product__image" src='./static/car-1.webp' />
-        <PageTitle className='title' title='Cars' />
-        <div className='product__info-container'>
-          <h2 className='product__title'>{currentCar.category}</h2>
-          <Description currentCar={currentCar} />
+      <div className='container'>
+        <div className='product'>
+          <img className="product__image" src='./static/car-1.webp' />
+          <PageTitle className='title' title='Cars' />
+          <div className='product__info-container'>
+            <h2 className='product__title'>{currentCar.category}</h2>
+            <Description currentCar={currentCar} />
+          </div>
         </div>
+        <Builder getCurrentCar={getCurrentCar} />
       </div>
-      <Builder getCurrentCar={getCurrentCar} />
       
       <style jsx>
         {`
