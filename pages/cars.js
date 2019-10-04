@@ -13,19 +13,25 @@ const Cars = () => {
   return (
     <main>
       <div className='container'>
+        <PageTitle title='Car Builder' />
         <div className='product'>
-          <img className="product__image" src='./static/car-1.webp' />
-          <PageTitle className='title' title='Cars' />
+          <img className="product__image" src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } />
           <div className='product__info-container'>
-            <h2 className='product__title'>{currentCar.category}</h2>
+            <h2 className='product__title'>{currentCar.category === 'street' ? 'Street Car' : 'Off Road Vehicle'}</h2>
             <Description currentCar={currentCar} />
           </div>
         </div>
         <Builder getCurrentCar={getCurrentCar} />
       </div>
-      
+
       <style jsx>
         {`
+
+          main {
+            margin-top: 4rem;
+            text-align: center;
+          }
+
           .product__image {
             width: 100%;
           }

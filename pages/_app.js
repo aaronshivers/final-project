@@ -38,13 +38,17 @@ class MyApp extends App {
 
             .container {
               max-width: 325px;
-              margin: 0 auto;
+              margin: 1rem auto;
             }
 
             @media (min-width: 768px) {
               .container {
                 max-width: 750px;
               }
+            }
+
+            .width-100 {
+              width: 100%
             }
           `}
         </style>

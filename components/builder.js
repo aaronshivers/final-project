@@ -23,14 +23,6 @@ const Builder = ({getCurrentCar}) => {
     startAddCar(car)(dispatch, state)
   }
 
-  // useEffect(() => console.log(category))
-
-  // useEffect(() => {
-  //   setCategory('')
-  //   setBody('')
-  // }, [state])
-  // const handleOnChange = value => setCategory(value)
-
   return (
     <>
       <form onSubmit={handleSubmit}>
@@ -193,10 +185,25 @@ const Builder = ({getCurrentCar}) => {
             Two
           </label>
         </fieldset>
-        <Button text='Add to Cart'/>
+        <div className='button-container'>
+          <Button className='button' text='Add to Cart'/>
+        </div>
       </form>
       <style jsx>
         {`
+
+          fieldset {
+            border: 2px solid;
+            border-radius: 5px;
+          }
+
+          label {
+            padding: 1rem;
+          }
+
+          .button-container {
+            margin-top: 1rem;
+          }
         `}
       </style>
     </>
