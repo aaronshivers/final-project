@@ -37,7 +37,7 @@ class MyApp extends App {
             }
 
             .container {
-              max-width:325px;
+              max-width: 325px;
               margin: 0 auto;
             }
 

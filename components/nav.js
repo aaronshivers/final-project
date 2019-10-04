@@ -48,6 +48,7 @@ const Nav = () => {
           width: 100vw;
           height: 4rem;
           position: fixed;
+          top: 0;
           background-color: white;
           font-size: 1.5rem;
           display: flex;
