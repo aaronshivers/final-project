@@ -12,22 +12,24 @@ const Cart = () => {
 
   return (
     <div className='container'>
-      <Nav />
       <PageTitle title='Cart' />
-      <div>
+      <div className="car-boxes">
         {
           state[0] && state.map((car) => (
             <div key={car.id}>
-              <CartItem {...car} />
-              <button onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
+              <div className="car-box">
+                <CartItem {...car} />
+                <button className="button delete" onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
+              </div>
             </div>
           ))
         }
       </div>
-      <Link href='checkout'><a className='link'>Checkout</a></Link>
+      <Link href='checkout'><a className='button checkout'>Checkout</a></Link>
+      
       <style>
         {`
-        .link {
+        .button {
             color: #333;
             background-color: white;
             font-family: arial;
@@ -37,9 +39,25 @@ const Cart = () => {
             border-radius: 5px;
             text-decoration: none;
         }
-        .link:hover {
+        .button:hover {
             background-color: gray;
             cursor: pointer;
+        }
+        .checkout {
+        }
+        .delete {
+          margin: 1rem;
+        }
+        .delete:hover {
+          background-color: crimson;
+        }
+        .car-box {
+          border: 2px solid black;
+          border-radius: 5px;
+          margin: 1rem 0;
+        }
+        .car-boxes {
+          margin-top: 2rem;
         }
         `}
       </style>
