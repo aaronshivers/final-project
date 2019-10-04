@@ -18,7 +18,9 @@ class MyApp extends App {
         </Head>
         <Nav />
         <AppContextProvider>
-          <Component {...pageProps} className='container' />
+          <div className='container'>
+            <Component {...pageProps} />
+          </div>
         </AppContextProvider>
         <style global jsx>
           {`
