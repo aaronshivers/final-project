@@ -16,39 +16,56 @@ class MyApp extends App {
           <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
 
         </Head>
-        <Nav />
-        <AppContextProvider>
-          <Component {...pageProps} />
-        </AppContextProvider>
+        <div className='grid-container'>
+          <Nav className='navbar' />
+          <main className='main'>
+            <AppContextProvider>
+              <Component {...pageProps} />
+            </AppContextProvider>
+          </main>
+        </div>
+
         <style global jsx>
           {`
             * {
               box-sizing: border-box;
             }
 
+            html, body, .grid-container {
+              height: 100%;
+              margin: 0;
+            }
+
+            .grid-container {
+              display: grid;
+              grid-template-columns: 1fr;
+              grid-template-rows: 4rem 1fr;
+              grid-template-areas: 'navbar' 'main'
+            }
+
             body {
               margin: 0;
               font-family: 'Montserrat', sans-serif;
               color: black;
-              min-height: 100vh;
             }
 
-            main {
+            .navbar {
+              grid-area: navbar;
+            }
+
+            .main {
+              grid-area: main;
             }
 
             .container {
-              max-width: 325px;
-              margin: 1rem auto;
+              margin-right: 1rem;
+              margin-left: 1rem;
             }
 
             @media (min-width: 768px) {
               .container {
-                max-width: 750px;
-              }
-            }
 
-            .width-100 {
-              width: 100%
+              }
             }
           `}
         </style>

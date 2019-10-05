@@ -5,15 +5,13 @@ import PageTitle from '../components/page-title'
 
 const Home = () => {
   return (
-    <main>
-      <div className="hero">
-        <div className="hero__container">
-          <div className="hero__box">
-            <h1 className="hero__title">RC Carpenters</h1>
-            <p className="hero__subtitle">
-              Get Your Game On!
-            </p>
-          </div>
+    <div className="hero">
+      <div className="hero__container">
+        <div className="hero__box">
+          <h1 className="hero__title">RC Carpenters</h1>
+          <p className="hero__subtitle">
+            Get Your Game On!
+          </p>
         </div>
       </div>
 
@@ -69,7 +67,7 @@ const Home = () => {
           }
         `}
       </style>
-    </main>
+    </div>
   )
 }
 
