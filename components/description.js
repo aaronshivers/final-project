@@ -14,17 +14,54 @@ const Description = ({currentCar}) => {
       <p>
         UPC Prefix: {getUPC(body)}
       </p>
-      <p>battery {battery} ${priceList.battery[battery]}</p>
-      <p>body {body} ${priceList.body[body]}</p>
-      <p>category {category} ${priceList.category[category]}</p>
-      <p>wheels {wheels} ${priceList.wheels[wheels]}</p>
-      <p>shell {shell} ${priceList.shell[shell]}</p>
-      <p>Total Price: ${getTotalPrice({battery, body, category, wheels, shell, priceList})}</p>
+      <table>
+        <tr>
+          <td>Battery</td>
+          <td>{battery}</td>
+          <td>${priceList.battery[battery]}</td>
+        </tr>
+        <tr>
+          <td>Body</td>
+          <td>{body}</td>
+          <td>${priceList.body[body]}</td>
+        </tr>
+        <tr>
+          <td>Category</td>
+          <td>{category}</td>
+          <td>${priceList.category[category]}</td>
+        </tr>
+        <tr>
+          <td>Wheels</td>
+          <td>{wheels}</td>
+          <td>${priceList.wheels[wheels]}</td>
+        </tr>
+        <tr>
+          <td>Extra Shell</td>
+          <td>{shell}</td>
+          <td>${priceList.shell[shell]}</td>
+        </tr>
+        <tr>
+          <td>Total Price</td>
+          <td></td>
+          <td>${getTotalPrice({battery, body, category, wheels, shell, priceList})}</td>
+        </tr>
+      </table>
     
       <style jsx>
         {`
           .product__description {
             padding-bottom: 1rem;
+          }
+
+          table {
+            border-spacing: 0;
+            border: 2px solid black;
+          }
+
+          td {
+            border-right: 1px solid black;
+            border-bottom: 1px solid black;
+            padding: .5rem;
           }
         `}
       </style>
