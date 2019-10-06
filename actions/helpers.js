@@ -42,8 +42,6 @@ export const priceList = {
     offRoad: 30
   },
   body: {
-    military: 10,
-    truck: 10,
     sport: 5,
     suv: 5,
     classic: 5,
@@ -58,14 +56,20 @@ export const priceList = {
   battery: {
     one: 10,
     two: 20
+  },
+  shell: {
+    none: 0,
+    military: 10,
+    truck: 10,
   }
 }
 
-export const getTotalPrice = ({battery, body, category, wheels, priceList}) => {
+export const getTotalPrice = ({battery, body, category, wheels, shell, priceList}) => {
   return (
     priceList.battery[battery] +
     priceList.body[body] +
     priceList.category[category] +
-    priceList.wheels[wheels]
+    priceList.wheels[wheels] +
+    priceList.shell[shell]
   )
 }

@@ -8,7 +8,8 @@ export const startAddCar = (carData = {}) => (dispatch, state) => {
     category = '',
     body = '',
     wheels = '',
-    battery = false
+    battery = false,
+    shell = ''
   } = carData
 
   const car = {
@@ -17,6 +18,7 @@ export const startAddCar = (carData = {}) => (dispatch, state) => {
     body,
     wheels,
     battery,
+    shell,
     createdAt: Date.now()
   }
 

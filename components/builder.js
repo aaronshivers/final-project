@@ -6,11 +6,15 @@ import Button from './button'
 const Builder = ({getCurrentCar}) => {
   const {state, dispatch} = useContext(AppContext)
   const [category, setCategory] = useState('street')
-  const [body, setBody] = useState('military')
+  const [body, setBody] = useState('sport')
   const [wheels, setWheels] = useState('regular')
   const [battery, setBattery] = useState('one')
+  const [shell, setShell] = useState('none')
 
-  useEffect(() => getCurrentCar({battery, body, category, wheels}), [battery, body, category, wheels])
+  useEffect(() => getCurrentCar(
+    {battery, body, category, wheels, shell}),
+    [battery, body, category, wheels, shell]
+  )
 
   const handleSubmit = e => {
     e.preventDefault()
@@ -18,7 +22,8 @@ const Builder = ({getCurrentCar}) => {
       category,
       body,
       wheels,
-      battery
+      battery,
+      shell
     }
     startAddCar(car)(dispatch, state)
   }
@@ -51,26 +56,6 @@ const Builder = ({getCurrentCar}) => {
         </fieldset>
         <fieldset>
           <legend>Body Types</legend>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='military'
-              onChange={e => setBody('military')}
-              checked={body === 'military'}
-            />
-            Military
-          </label>
-          <label>
-            <input
-              type='radio'
-              name='body'
-              value='truck'
-              onChange={e => setBody('truck')}
-              checked={body === 'truck'}
-            />
-            Truck
-          </label>
           {
             category === 'street' ?
             <>
@@ -183,6 +168,39 @@ const Builder = ({getCurrentCar}) => {
               checked={battery === 'two'}
             />
             Two
+          </label>
+        </fieldset>
+        <fieldset>
+          <legend>Extra Shell</legend>
+          <label>
+            <input
+              type='radio'
+              name='shell'
+              value='none'
+              onChange={e => setShell('none')}
+              checked={shell === 'none'}
+            />
+            None
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='shell'
+              value='military'
+              onChange={e => setShell('military')}
+              checked={shell === 'military'}
+            />
+            Military
+          </label>
+          <label>
+            <input
+              type='radio'
+              name='shell'
+              value='truck'
+              onChange={e => setShell('truck')}
+              checked={shell === 'truck'}
+            />
+            Truck
           </label>
         </fieldset>
         <div className='button-container'>

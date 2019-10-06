@@ -5,7 +5,7 @@ import {
   priceList,
 } from '../actions/helpers'
 
-const CheckoutItem = ({battery, body, category, wheels, count}) => {
+const CheckoutItem = ({battery, body, category, wheels, shell, count}) => {
 
   return (
     <div className='checkout-item'>
@@ -15,7 +15,7 @@ const CheckoutItem = ({battery, body, category, wheels, count}) => {
         <p>Count: {count}</p>
       </div>
       <div className='price'>
-        <p align="right">Item Price: ${getTotalPrice({battery, body, category, wheels, priceList})}</p>
+        <p align="right">Item Price: ${getTotalPrice({battery, body, category, wheels, shell, priceList})}</p>
       </div>
 
       <style jsx>{`
