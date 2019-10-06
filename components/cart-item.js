@@ -6,7 +6,7 @@ import {
   priceList,
 } from '../actions/helpers'
 
-const CartItem = ({battery, body, category, wheels}) => {
+const CartItem = ({battery, body, category, wheels, shell}) => {
 
   useEffect(() => {
 
@@ -19,9 +19,10 @@ const CartItem = ({battery, body, category, wheels}) => {
         <p>Body: {body}</p>
         <p>Wheels & Tires: {wheels}</p>
         <p>Batteries: {battery}</p>
+        <p>Extra Shell: {shell}</p>
         <p>model: {getModel(body)}</p>
         <p>UPC Prefix: {getUPC(body)}</p>
-        <p>Total Price: ${getTotalPrice({battery, body, category, wheels, priceList})}</p>
+        <p>Total Price: ${getTotalPrice({battery, body, category, wheels, shell, priceList})}</p>
       </div>
       <style jsx>{`
         div {
