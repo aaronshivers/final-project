@@ -16,11 +16,12 @@ const Cars = () => {
       <div className='product'>
         <img className="product__image" src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } />
         <div className='product__info-container'>
-          <h2 className='product__title'>{currentCar.category === 'street' ? 'Street Car' : 'Off Road Vehicle'}</h2>
-          <Description currentCar={currentCar} />
+          <Description className="product__description" currentCar={currentCar} />
         </div>
       </div>
-      <Builder getCurrentCar={getCurrentCar} />
+      <div className='builder'>
+        <Builder getCurrentCar={getCurrentCar} />
+      </div>
 
       <style jsx>
         {`
@@ -28,30 +29,62 @@ const Cars = () => {
             display: grid;
             grid-gap: 1rem;
             grid-template-rows: repeat(3, auto);
+            grid-template-areas: 'title'
+                                 'product'
+                                 'builder';
             margin: 1rem;
           }
 
+          .title {
+            grid-area: title;
+          }
+
           .product {
+            grid-area: product;
             display: grid;
             grid-gap: 1rem;
             grid-template-rows: repeat(2, auto);
+            grid-template-areas: 'image'
+                                 'description';
           }
 
           .product__image {
             width: 100%;
+            grid-area: image;
           }
 
           .product__info-container {
+            grid-area: description;
             display: grid;
             grid-gap: 1rem;
             grid-template-rows: repeat(2, auto);
+          }
+
+          .builder {
+            grid-area: builder;
           }
 
           @media (min-width: 575px) {
             .product {
               display: grid;
               grid-template-columns: repeat(2, calc(50% - 0.5rem));
-              grid-template-areas: '.' '.';
+              grid-template-areas: 'image description';
+            }
+          }
+
+          @media (min-width: 768px) {
+            .product {
+              grid-template-rows: repeat(2, auto);
+              grid-template-columns: auto;
+              grid-template-areas: 'image'
+                                   'description';
+            }
+
+            .container {
+              grid-template-columns: repeat(2, auto);
+              grid-template-rows: repeat(2, auto);
+              grid-template-areas: 'title title'
+                                   'product builder';
             }
           }
 

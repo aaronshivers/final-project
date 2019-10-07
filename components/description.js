@@ -8,13 +8,18 @@ const Description = ({currentCar}) => {
   return (
     <div className='product__description'>
       <h2>Car Description</h2>
-      <p>
-        model: {getModel(body)}
-      </p>
-      <p>
-        UPC Prefix: {getUPC(body)}
-      </p>
+
       <table>
+        <tr>
+          <td>Model #</td>
+          <td></td>
+          <td>{getModel(body)}</td>
+        </tr>
+        <tr>
+          <td>UPC Prefix</td>
+          <td></td>
+          <td>{getUPC(body)}</td>
+        </tr>
         <tr>
           <td>Battery</td>
           <td>{battery}</td>
