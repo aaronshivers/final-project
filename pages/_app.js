@@ -12,6 +12,8 @@ class MyApp extends App {
     return (
       <div>
         <Head>
+          <meta name="description" content="RC Carpenters is the greates RC Car Website ever created." />
+          <title>RC Carpenters</title>
           <meta name="theme-color" content="#ffde2b" />
           <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
           <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
