@@ -46,6 +46,8 @@ const Cars = () => {
             grid-template-rows: repeat(2, auto);
             grid-template-areas: 'image'
                                  'description';
+              justify-items: center;
+              text-align: center;                                 
           }
 
           .product__image {

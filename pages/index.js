@@ -18,7 +18,7 @@ const Home = () => {
       <style jsx>
         {`
           .hero {
-            background: url('/static/bg.jpeg');
+            background: url('/static/bg.webp');
             background-size: cover;
             background-position: center;
             width: 100%;
