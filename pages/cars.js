@@ -73,13 +73,6 @@ const Cars = () => {
           }
 
           @media (min-width: 768px) {
-            .product {
-              grid-template-rows: repeat(2, auto);
-              grid-template-columns: auto;
-              grid-template-areas: 'image'
-                                   'description';
-            }
-
             .container {
               grid-template-columns: repeat(2, auto);
               grid-template-rows: repeat(2, auto);
