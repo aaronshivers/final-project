@@ -49,7 +49,7 @@ const Nav = () => {
           height: 4rem;
           position: fixed;
           top: 0;
-          background-color: white;
+          background-color: var(--primary-color);
           font-size: 1.5rem;
           display: flex;
           align-items: center;
@@ -85,9 +85,9 @@ const Nav = () => {
           display: none;
           position: absolute;
           left: 0;
-          top: 3rem;
+          top: 4rem;
           width: 100%;
-          background-color: white;
+          background-color: var(--primary-color);
           padding-right: 1rem;
         }
 
@@ -99,6 +99,10 @@ const Nav = () => {
           list-style: none;
           padding-top: 1rem;
           text-align: right;
+        }
+
+        .navbar__dropdown li:first-child {
+          padding-top: 0;
         }
 
         .navbar__dropdown a {

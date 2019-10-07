@@ -25,7 +25,7 @@ const Home = () => {
           }
 
           .hero__container {
-            height: 100vh;
+            height: calc(100vh - 4rem);
             width: 100vw;
             display: grid;
           }

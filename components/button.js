@@ -3,7 +3,7 @@ const Button = ({text}) => {
     <button>{text}
     <style jsx>{`
       button {
-        background-color: white;
+        background-color: var(--primary-color);
         font-family: arial;
         font-size: 1.2rem;
         padding: .6rem;
@@ -12,7 +12,8 @@ const Button = ({text}) => {
       }
 
       button:hover {
-        background-color: gray;
+        background-color: white;
+        color: black;
         cursor: pointer;
       }
     `}</style>

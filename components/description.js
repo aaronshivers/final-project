@@ -56,6 +56,7 @@ const Description = ({currentCar}) => {
           table {
             border-spacing: 0;
             border: 2px solid black;
+            border-radius: 6px;
           }
 
           td {

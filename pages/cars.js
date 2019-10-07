@@ -24,18 +24,33 @@ const Cars = () => {
 
       <style jsx>
         {`
+          .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-rows: repeat(3, auto);
+            margin: 1rem;
+          }
+
+          .product {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-rows: repeat(2, auto);
+          }
+
           .product__image {
             width: 100%;
           }
 
           .product__info-container {
-            margin: 1rem;
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-rows: repeat(2, auto);
           }
 
-          @media (min-width: 768px) {
+          @media (min-width: 575px) {
             .product {
               display: grid;
-              grid-template-columns: 50% 50%;
+              grid-template-columns: repeat(2, calc(50% - 0.5rem));
               grid-template-areas: '.' '.';
             }
           }

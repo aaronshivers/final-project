@@ -27,6 +27,11 @@ class MyApp extends App {
 
         <style global jsx>
           {`
+
+            :root {
+              --primary-color: #ffde2b
+            }
+
             * {
               box-sizing: border-box;
             }
