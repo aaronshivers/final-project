@@ -50,7 +50,7 @@ const Nav = () => {
           position: fixed;
           top: 0;
           background-color: var(--primary-color);
-          font-size: 1.5rem;
+          font-size: 1rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
