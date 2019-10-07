@@ -12,9 +12,11 @@ class MyApp extends App {
     return (
       <div>
         <Head>
+          <meta name="theme-color" content="#ffde2b" />
           <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
           <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
           <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png" />
+          <link rel="manifest" href="static/site.webmanifest" />
         </Head>
         <div className='grid-container'>
           <Nav className='navbar' />
