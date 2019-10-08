@@ -64,6 +64,7 @@ const Description = ({currentCar}) => {
             border: 0;
             border-bottom: 3px solid var(--primary-darker-color);
             padding: 1rem;
+            padding-top: 1.5rem;
             grid-area: title;
           }
           

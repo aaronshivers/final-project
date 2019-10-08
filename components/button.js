@@ -8,6 +8,7 @@ const Button = ({text}) => {
         font-family: arial;
         font-size: 1.2rem;
         padding: .6rem;
+        padding-top: 1rem;
         border: 0;
         border-bottom: 3px solid var(--primary-darker-color);
         text-decoration: none;
