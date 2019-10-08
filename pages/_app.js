@@ -69,6 +69,7 @@ class MyApp extends App {
             .container {
               margin-right: 1rem;
               margin-left: 1rem;
+              margin-bottom: 2rem;
             }
 
             @media (min-width: 768px) {
