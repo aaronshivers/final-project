@@ -1,9 +1,8 @@
-import {useContext} from 'react'
+import React, {useContext} from 'react'
 import AppContext from '../context/context'
 import Link from 'next/link'
 import CartItem from '../components/cart-item'
 import {startRemoveCar} from '../actions/cars'
-import Button from '../components/button'
 import PageTitle from '../components/page-title'
 
 const Cart = () => {
@@ -11,54 +10,80 @@ const Cart = () => {
 
   return (
     <div className='container'>
-      <PageTitle title='Cart' />
-      <div className="car-boxes">
-        {
-          state[0] && state.map((car) => (
-            <div key={car.id}>
-              <div className="car-box">
+      <div className="cart__container">
+        <div className="cart__title">
+          <PageTitle title='Cart' />
+        </div>
+        <div className="cart__checkout">
+          <Link href='checkout'><button className='button button--checkout'>Checkout</button></Link>
+        </div>
+        <div className="cart__items">
+          {
+            state[0] && state.map((car) => (
+              <div className='car__container' key={car.id}>
                 <CartItem {...car} />
-                <button className="button delete" onClick={() => startRemoveCar(car.id)(dispatch, state)}>X</button>
+                <button className="button button--remove" onClick={() => startRemoveCar(car.id)(dispatch, state)}>Remove Item</button>
               </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
-      <Link href='checkout'><a className='button checkout'>Checkout</a></Link>
-      
+
+
       <style>
         {`
+          .cart__container {
+            margin: 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: repeat(3, auto);
+            grid-template-areas: 'title checkout'
+                                 'items items';
+          }
+          
+          .cart__title {
+            grid-area: title;
+            align-self: center;
+          }
+        
+          .cart__checkout {
+            grid-area: checkout;
+            justify-self: end;
+          }
+          
+          .cart__items {
+            grid-area: items;
+          }
+          
+          .car__container {
+            border-bottom: 2px solid black;
+            margin: 1rem 0;
+            padding: 1rem;
+          }
+        
         .button {
-            color: #333;
-            background-color: white;
-            font-family: arial;
-            font-size: 1.2rem;
-            padding: .6rem;
-            border: 2px solid #333;
-            border-radius: 5px;
-            text-decoration: none;
+          
+          color: #333;
+          background-color: white;
+          font-family: arial;
+          font-size: 1.2rem;
+          padding: .6rem;
+          border: 2px solid #333;
+          border-radius: 5px;
+          text-decoration: none;
         }
         .button:hover {
-            background-color: gray;
+            background-color: limegreen;
             cursor: pointer;
         }
-        .checkout {
-        }
-        .delete {
-          margin: 1rem;
-        }
-        .delete:hover {
-          background-color: crimson;
-        }
-        .car-box {
-          border: 2px solid black;
-          border-radius: 5px;
-          margin: 1rem 0;
-          padding: 1rem;
-        }
-        .car-boxes {
-          margin-top: 2rem;
-        }
+        
+          .button--remove {
+            margin-top: 2rem;
+          }
+          
+          .button--remove:hover {
+            background-color: crimson;
+          }
         `}
       </style>
     </div>
