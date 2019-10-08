@@ -54,6 +54,7 @@ const Cart = () => {
           border: 2px solid black;
           border-radius: 5px;
           margin: 1rem 0;
+          padding: 1rem;
         }
         .car-boxes {
           margin-top: 2rem;
