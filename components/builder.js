@@ -125,7 +125,7 @@ const Builder = ({getCurrentCar}) => {
           }
         </fieldset>
         <fieldset>
-          <legend>Wheels & Tires</legend>
+          <legend>Wheels &amp; Tires</legend>
           <label>
             <input
               type='radio'
