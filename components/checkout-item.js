@@ -3,6 +3,7 @@ import {
   getModel,
   getTotalPrice,
   priceList,
+  spellCheck,
 } from '../actions/helpers'
 
 const CheckoutItem = ({battery, body, category, wheels, shell, count}) => {
@@ -10,6 +11,8 @@ const CheckoutItem = ({battery, body, category, wheels, shell, count}) => {
   return (
     <div className='checkout-item'>
       <div className='info'>
+        <p>Category: {category === 'offRoad' ? 'Off Road' : 'Street'}</p>
+        <p>Body: {spellCheck(body)}</p>
         <p>Model: {getModel(body)}</p>
         <p>UPC Prefix: {getUPC(body)}</p>
         <p>Count: {count}</p>

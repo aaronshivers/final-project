@@ -73,3 +73,26 @@ export const getTotalPrice = ({battery, body, category, wheels, shell, priceList
     priceList.shell[shell]
   )
 }
+
+export const spellCheck = word => {
+  switch (word){
+    case 'sport':
+      return 'Sport'
+    case 'suv':
+      return 'SUV'
+    case 'classic':
+      return 'Classic'
+    case 'atv':
+      return 'ATV'
+    case 'duneBuggy':
+      return 'Dune Buggy'
+    case 'crawlers':
+      return 'Crawlers'
+    case 'none':
+      return 'None'
+    case 'military':
+      return 'Military'
+    case 'truck':
+      return 'Truck'
+  }
+}

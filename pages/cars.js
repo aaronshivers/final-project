@@ -11,7 +11,7 @@ const Cars = () => {
   }
   
   return (
-    <div className='container'>
+    <div className='cars__container'>
       <PageTitle className='title' title='Car Builder' />
       <div className='product'>
         <img className="product__image" src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } />
@@ -25,7 +25,7 @@ const Cars = () => {
 
       <style jsx>
         {`
-          .container {
+          .cars__container {
             display: grid;
             grid-gap: 1rem;
             grid-template-rows: repeat(3, auto);
