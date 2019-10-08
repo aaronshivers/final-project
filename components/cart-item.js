@@ -62,6 +62,8 @@ const CartItem = ({battery, body, category, wheels, shell}) => {
         
         .cart-item__title {
           background-color: var(--primary-color);
+          border: 0;
+          border-bottom: 3px solid var(--primary-darker-color);
           padding: 1rem;
           grid-area: title;
         }
