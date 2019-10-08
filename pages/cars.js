@@ -4,17 +4,15 @@ import Builder from '../components/builder'
 import PageTitle from '../components/page-title'
 
 const Cars = () => {
-  const [currentCar, setCurrentCar] = useState({})
+  const [currentCar, setCurrentCar] = useState({});
 
-  const getCurrentCar = car => {
-    setCurrentCar(car)
-  }
+  const getCurrentCar = car => setCurrentCar(car);
   
   return (
     <div className='cars__container'>
       <PageTitle className='title' title='Car Builder' />
       <div className='product'>
-        <img className="product__image" src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } />
+        <img className="product__image" src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } alt={currentCar.category} />
         <div className='product__info-container'>
           <Description className="product__description" currentCar={currentCar} />
         </div>
@@ -46,8 +44,8 @@ const Cars = () => {
             grid-template-rows: repeat(2, auto);
             grid-template-areas: 'image'
                                  'description';
-              justify-items: center;
-              text-align: center;                                 
+            justify-items: center;
+            text-align: center;                                 
           }
 
           .product__image {

@@ -1,55 +1,56 @@
-import {useContext, useEffect} from 'react'
-import AppContext from '../context/context'
+import React, {useContext, useEffect} from 'react'
 import {getUPC, getModel, getTotalPrice, priceList} from '../actions/helpers'
 
 const Description = ({currentCar}) => {
-  const {battery, body, category, wheels, shell} = currentCar
+  const {battery, body, category, wheels, shell} = currentCar;
 
   return (
     <div className='product__description'>
       <h2>Car Description</h2>
 
       <table>
-        <tr>
-          <td>Model #</td>
-          <td></td>
-          <td>{getModel(body)}</td>
-        </tr>
-        <tr>
-          <td>UPC Prefix</td>
-          <td></td>
-          <td>{getUPC(body)}</td>
-        </tr>
-        <tr>
-          <td>Battery</td>
-          <td>{battery}</td>
-          <td>${priceList.battery[battery]}</td>
-        </tr>
-        <tr>
-          <td>Body</td>
-          <td>{body}</td>
-          <td>${priceList.body[body]}</td>
-        </tr>
-        <tr>
-          <td>Category</td>
-          <td>{category}</td>
-          <td>${priceList.category[category]}</td>
-        </tr>
-        <tr>
-          <td>Wheels</td>
-          <td>{wheels}</td>
-          <td>${priceList.wheels[wheels]}</td>
-        </tr>
-        <tr>
-          <td>Extra Shell</td>
-          <td>{shell}</td>
-          <td>${priceList.shell[shell]}</td>
-        </tr>
-        <tr>
-          <td>Total Price</td>
-          <td></td>
-          <td>${getTotalPrice({battery, body, category, wheels, shell, priceList})}</td>
-        </tr>
+        <tbody>
+          <tr>
+            <td>Model #</td>
+            <td/>
+            <td>{getModel(body)}</td>
+          </tr>
+          <tr>
+            <td>UPC Prefix</td>
+            <td/>
+            <td>{getUPC(body)}</td>
+          </tr>
+          <tr>
+            <td>Battery</td>
+            <td>{battery}</td>
+            <td>${priceList.battery[battery]}</td>
+          </tr>
+          <tr>
+            <td>Body</td>
+            <td>{body}</td>
+            <td>${priceList.body[body]}</td>
+          </tr>
+          <tr>
+            <td>Category</td>
+            <td>{category}</td>
+            <td>${priceList.category[category]}</td>
+          </tr>
+          <tr>
+            <td>Wheels</td>
+            <td>{wheels}</td>
+            <td>${priceList.wheels[wheels]}</td>
+          </tr>
+          <tr>
+            <td>Extra Shell</td>
+            <td>{shell}</td>
+            <td>${priceList.shell[shell]}</td>
+          </tr>
+          <tr>
+            <td>Total Price</td>
+            <td/>
+            <td>${getTotalPrice({battery, body, category, wheels, shell, priceList})}</td>
+          </tr>
+        </tbody>
       </table>
     
       <style jsx>
@@ -74,6 +75,6 @@ const Description = ({currentCar}) => {
       </style>
     </div>
   )
-}
+};
 
 export default Description

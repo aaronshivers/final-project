@@ -50,7 +50,9 @@ const Nav = () => {
           position: fixed;
           top: 0;
           background-color: var(--primary-color);
-          font-size: 1rem;
+          border: 0;
+          border-bottom: 3px solid var(--primary-darker-color);
+          font-size: 1.3rem;
           display: flex;
           align-items: center;
           justify-content: space-between;
@@ -85,10 +87,12 @@ const Nav = () => {
           display: none;
           position: absolute;
           left: 0;
-          top: 4rem;
+          top: calc(4rem - 3px);
           width: 100%;
           background-color: var(--primary-color);
           padding-right: 1rem;
+          border: 0;
+          border-bottom: 3px solid var(--primary-darker-color);
         }
 
         .navbar__dropdown ul {

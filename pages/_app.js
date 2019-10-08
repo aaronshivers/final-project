@@ -8,17 +8,17 @@ class MyApp extends App {
 
   render() {
 
-    const { Component, pageProps } = this.props
+    const { Component, pageProps } = this.props;
     return (
       <div>
         <Head>
           <meta name="description" content="RC Carpenters is the greatest RC Car Website ever created." />
           <title>RC Carpenters</title>
           <meta name="theme-color" content="#ffde2b" />
-          <link rel="stylesheet" href="static/normalize.css" />
+          <link rel="stylesheet" href="../static/normalize.css" />
           <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet" />
-          <link rel="icon" type="image/png" sizes="16x16" href="static/favicon-16x16.png" />
-          <link rel="manifest" href="static/site.webmanifest" />
+          <link rel="icon" type="image/png" sizes="16x16" href="../static/favicon-16x16.png" />
+          <link rel="manifest" href="../static/site.webmanifest" />
         </Head>
         <div className='grid-container'>
           <Nav className='navbar' />
@@ -33,7 +33,8 @@ class MyApp extends App {
           {`
 
             :root {
-              --primary-color: #ffde2b
+              --primary-color: #ffde2b;
+              --primary-darker-color: #ffc929;
             }
 
             * {
@@ -49,7 +50,8 @@ class MyApp extends App {
               display: grid;
               grid-template-columns: 1fr;
               grid-template-rows: 4rem 1fr;
-              grid-template-areas: 'navbar' 'main'
+              grid-template-areas: 'navbar'
+                                   'main';
             }
 
             body {

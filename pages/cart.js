@@ -30,7 +30,7 @@ const Cart = () => {
       </div>
 
 
-      <style>
+      <style jsx>
         {`
           .cart__container {
             margin: 2rem 0;
@@ -61,21 +61,22 @@ const Cart = () => {
             padding: 1rem;
           }
         
-        .button {
+          .button {
+            color: #333;
+            background-color: var(--primary-color);
+            font-family: arial;
+            font-size: 1.2rem;
+            padding: .6rem;
+            border: 0;
+            border-bottom: 3px solid var(--primary-darker-color);
+            text-decoration: none;
+          }
           
-          color: #333;
-          background-color: white;
-          font-family: arial;
-          font-size: 1.2rem;
-          padding: .6rem;
-          border: 2px solid #333;
-          border-radius: 5px;
-          text-decoration: none;
-        }
-        .button:hover {
-            background-color: limegreen;
+          .button:hover {
+            background-color: lime;
             cursor: pointer;
-        }
+            border-bottom: 3px solid limegreen;
+          }
         
           .button--remove {
             margin-top: 2rem;
@@ -83,6 +84,7 @@ const Cart = () => {
           
           .button--remove:hover {
             background-color: crimson;
+            border-bottom: 3px solid darkred;
           }
         `}
       </style>

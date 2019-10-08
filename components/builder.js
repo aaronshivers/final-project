@@ -1,32 +1,32 @@
-import {useState, useEffect, useContext} from 'react'
+import React, {useState, useEffect, useContext} from 'react'
 import AppContext from '../context/context'
 import {startAddCar} from '../actions/cars'
 import Button from './button'
 
 const Builder = ({getCurrentCar}) => {
-  const {state, dispatch} = useContext(AppContext)
-  const [category, setCategory] = useState('street')
-  const [body, setBody] = useState('sport')
-  const [wheels, setWheels] = useState('regular')
-  const [battery, setBattery] = useState('one')
-  const [shell, setShell] = useState('none')
+  const {state, dispatch} = useContext(AppContext);
+  const [category, setCategory] = useState('street');
+  const [body, setBody] = useState('sport');
+  const [wheels, setWheels] = useState('regular');
+  const [battery, setBattery] = useState('one');
+  const [shell, setShell] = useState('none');
 
   useEffect(() => getCurrentCar(
     {battery, body, category, wheels, shell}),
     [battery, body, category, wheels, shell]
-  )
+  );
 
   const handleSubmit = e => {
-    e.preventDefault()
+    e.preventDefault();
     const car = {
       category,
       body,
       wheels,
       battery,
       shell
-    }
+    };
     startAddCar(car)(dispatch, state)
-  }
+  };
 
   return (
     <>
@@ -226,5 +226,6 @@ const Builder = ({getCurrentCar}) => {
       </style>
     </>
   )
-}
+};
+
 export default Builder
