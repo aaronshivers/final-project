@@ -11,16 +11,37 @@ const CartItem = ({battery, body, category, wheels, shell}) => {
   useEffect(() => {
 
   })
-
+  const spellCheck = word => {
+    switch (word){
+      case 'sport':
+        return 'Sport'
+      case 'suv':
+        return 'SUV'
+      case 'classic':
+        return 'Classic'
+      case 'atv':
+        return 'ATV'
+      case 'duneBuggy':
+        return 'Dune Buggy'
+      case 'crawlers':
+        return 'Crawlers'
+      case 'none':
+        return 'None'
+      case 'military':
+        return 'Military'
+      case 'truck':
+        return 'Truck'
+    }
+  } 
   return (
     <>
       <div>
-        <p>Category: {category}</p>
-        <p>Body: {body}</p>
-        <p>Wheels & Tires: {wheels}</p>
-        <p>Batteries: {battery}</p>
-        <p>Extra Shell: {shell}</p>
-        <p>model: {getModel(body)}</p>
+        <p>Category: {category === 'offRoad' ? 'Off Road' : 'Street'}</p>
+        <p>Body: {spellCheck(body)}</p>
+        <p>Wheels &amp; Tires: {wheels === 'regular' ? 'Regular' : 'Fancy'}</p>
+        <p>Batteries: {battery == 'one' ? 'One' : 'Two'}</p>
+        <p>Extra Shell: {spellCheck(shell)}</p>
+        <p>Model: {getModel(body)}</p>
         <p>UPC Prefix: {getUPC(body)}</p>
         <p>Total Price: ${getTotalPrice({battery, body, category, wheels, shell, priceList})}</p>
       </div>
