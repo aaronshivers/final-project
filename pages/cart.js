@@ -70,6 +70,7 @@ const Cart = () => {
             border: 0;
             border-bottom: 3px solid var(--primary-darker-color);
             text-decoration: none;
+            outline: none;
           }
           
           .button:hover {

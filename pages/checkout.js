@@ -1,9 +1,9 @@
-import {useContext} from 'react'
+import React, {useContext} from 'react'
 import AppContext from '../context/context'
 import CheckoutItem from '../components/checkout-item'
 
 const Checkout = () => {
-  const {state, dispatch} = useContext(AppContext)
+  const {state} = useContext(AppContext);
 
   const lastCount = {
     sport: 9752,
@@ -12,7 +12,7 @@ const Checkout = () => {
     atv: 8487,
     duneBuggy: 7445,
     crawler: 3397
-  }
+  };
 
   return (
     <div className='container'>
@@ -20,17 +20,25 @@ const Checkout = () => {
       <div>
         {
           state[0] && state.map((car) => {
-            lastCount[car.body] += 1
+            lastCount[car.body] += 1;
             return (
-              <div key={car.id}>
+              <div className='item' key={car.id}>
                 <CheckoutItem {...car} count={lastCount[car.body]} />
               </div>
             )
           })
         }
       </div>
+
+      <style jsx>
+        {`
+          .item {
+            margin: 1rem;
+          }
+        `}
+      </style>
     </div>
   )
-}
+};
 
 export default Checkout
