@@ -35,6 +35,7 @@ class MyApp extends App {
             :root {
               --primary-color: #ffde2b;
               --primary-darker-color: #ffc929;
+              --text-color: #222;
             }
 
             * {

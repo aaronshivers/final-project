@@ -62,7 +62,7 @@ const Cart = () => {
           }
         
           .button {
-            color: #333;
+            color: var(--text-color);
             background-color: var(--primary-color);
             font-family: arial;
             font-size: 1.2rem;
