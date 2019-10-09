@@ -26,18 +26,19 @@ const Cars = () => {
       <style jsx>
         {`
           .car__container {
+            margin: 1rem;
             display: grid;
             grid-gap: 1rem;
-            grid-auot-rows: auto;
+            grid-auto-rows: auto;
             grid-template-areas: 'title'
                                  'image'
                                  'description'
                                  'builder';
-            margin: 1rem;
           }
 
           .car__title {
             grid-area: title;
+            align-self: center;
           }
 
           .car__image {

@@ -29,21 +29,20 @@ const Cart = () => {
         </div>
       </div>
 
-
       <style jsx>
         {`
           .cart__container {
-            margin: 2rem 0;
+            margin: 1rem;
             display: grid;
+            grid-gap: 1rem;
             grid-template-columns: 1fr 1fr;
-            grid-template-rows: repeat(3, auto);
+            grid-auto-rows: auto;
             grid-template-areas: 'title checkout'
                                  'items items';
           }
           
           .cart__title {
             grid-area: title;
-            align-self: center;
           }
         
           .cart__checkout {
@@ -53,12 +52,14 @@ const Cart = () => {
           
           .cart__items {
             grid-area: items;
+            display: grid;
+            grid-gap: 1rem;
+            grid-auto-rows: auto;
           }
           
           .car__container {
-            border-bottom: 2px solid black;
-            margin: 1rem 0;
             padding: 1rem;
+            border-bottom: 2px solid black;
           }
         
           .button {
