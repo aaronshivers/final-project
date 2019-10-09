@@ -9,78 +9,62 @@ const Cars = () => {
   const getCurrentCar = car => setCurrentCar(car);
   
   return (
-    <div className='cars__container'>
-      <PageTitle className='title' title='Car Builder' />
-      <div className='product'>
-        <img className="product__image" src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } alt={currentCar.category} />
-        <div className='product__info-container'>
-          <Description className="product__description" currentCar={currentCar} />
+    <div className='container'>
+      <div className='car__container'>
+        <div className='car__title'>
+          <PageTitle title='Car Builder' />
         </div>
-      </div>
-      <div className='builder'>
-        <Builder getCurrentCar={getCurrentCar} />
+        <img className='car__image' src={currentCar.category === 'street' ? './static/car-1.webp' : './static/car-2.webp' } alt={currentCar.category} />
+        <div className='car__description'>
+          <Description currentCar={currentCar} />
+        </div>
+        <div className='car__builder'>
+          <Builder getCurrentCar={getCurrentCar} />
+        </div>
       </div>
 
       <style jsx>
         {`
-          .cars__container {
+          .car__container {
             display: grid;
             grid-gap: 1rem;
-            grid-template-rows: repeat(3, auto);
+            grid-auot-rows: auto;
             grid-template-areas: 'title'
-                                 'product'
+                                 'image'
+                                 'description'
                                  'builder';
             margin: 1rem;
           }
 
-          .title {
+          .car__title {
             grid-area: title;
           }
 
-          .product {
-            grid-area: product;
-            display: grid;
-            grid-gap: 1rem;
-            grid-template-rows: repeat(2, auto);
-            grid-template-areas: 'image'
-                                 'description';
-            justify-items: center;
-            text-align: center;                                 
-          }
-
-          .product__image {
+          .car__image {
             width: 100%;
             grid-area: image;
           }
 
-          .product__info-container {
+          .car__description {
             grid-area: description;
             display: grid;
             grid-gap: 1rem;
-            grid-template-rows: repeat(2, auto);
+            grid-auto-rows: auto;
           }
 
-          .builder {
+          .car__builder {
             grid-area: builder;
           }
 
           @media (min-width: 575px) {
-            .product {
-              display: grid;
-              grid-template-columns: repeat(2, calc(50% - 0.5rem));
-              grid-template-areas: 'image description';
-            }
-          }
-
-          @media (min-width: 768px) {
-            .container {
-              grid-template-columns: repeat(2, auto);
-              grid-template-rows: repeat(2, auto);
+            .car__container {
+              grid-template-columns: 50% 50%;
+              grid-auto-rows: auto;
               grid-template-areas: 'title title'
-                                   'product builder';
+                                   'image description'
+                                   'builder builder';
             }
           }
-
         `}
       </style>
     </div>
